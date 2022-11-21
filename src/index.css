@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar {
+  padding-top: 15px;
+}
+
+.logo {
+  height: auto;
+  width: 250px;
+}
+
+.page {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.card {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.background {
+  height: auto;
+  width: 100%;
+}
+
+.headerdrawer {
+  background-color:rgb(50, 141, 233);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.drawerbutton {
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+}
+
+.menubutton {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.horizontalChart {
+  height: 600px;
+}
+
+.homeHeading {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+.homeCardContainer {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.homeCardGroup {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 40px;
+  align-items: center;
+}
+
+
+
+
+
+
