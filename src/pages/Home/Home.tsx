@@ -1,5 +1,5 @@
 import React from 'react';
-import './../App.css';
+import './../../App.css';
 import { 
   Heading, 
   Card, 
@@ -33,12 +33,12 @@ export default function Home(homeProps: HomeProps) {
       </div>
       <div className='homeCardContainer'>
         <SimpleGrid spacing={4} columns={2}  className='homeCardGroup'>
-          <Card>
+          <Card className='homeCard'>
             <CardHeader>
               <Heading size='md'>Fee Comparison Tool</Heading>
             </CardHeader>
             <CardBody>
-              <Text>If you don't know what you want to invest in but want to see how fees compare across platforms for you investing goals.</Text>
+              <Text>If you don't know what you want to invest in but want to see how fees compare across platforms for your investing goals.</Text>
               <br/>
               <Text>Select how frequently and how much you want to invest and we will compare fees between platforms.</Text>
             </CardBody>
@@ -46,7 +46,7 @@ export default function Home(homeProps: HomeProps) {
               <Button onClick={() => homeProps.setPage('feecompare')} colorScheme='blue'>View here</Button>
             </CardFooter>
           </Card>
-          <Card>
+          <Card className='homeCard'>
             <CardHeader>
               <Heading size='md'>Portfolio Comparison Tool</Heading>
             </CardHeader>

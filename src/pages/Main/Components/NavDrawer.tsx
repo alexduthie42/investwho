@@ -1,5 +1,5 @@
 import React from 'react';
-import './../App.css';
+import './../../../App.css';
 import { 
   Drawer,
   DrawerHeader,
@@ -44,8 +44,7 @@ export default function NavDrawer(navDrawerProps: NavDrawerProps) {
                 <MenuButton pageId='home' pageName='Home' currentPage={navDrawerProps.page} setPage={navDrawerProps.setPage} onClose={onClose}/>
                 <MenuButton pageId='feecompare' pageName='Fee Comparison Tool' currentPage={navDrawerProps.page} setPage={navDrawerProps.setPage} onClose={onClose}/>
                 <MenuButton pageId='portfoliocompare' pageName='Portfolio Comparison Tool' currentPage={navDrawerProps.page} setPage={navDrawerProps.setPage} onClose={onClose}/>
-                <MenuButton pageId='about' pageName='About' currentPage={navDrawerProps.page} setPage={navDrawerProps.setPage} onClose={onClose}/>
-                <MenuButton pageId='contact' pageName='Contact' currentPage={navDrawerProps.page} setPage={navDrawerProps.setPage} onClose={onClose}/>
+                {/* <MenuButton pageId='about' pageName='About' currentPage={navDrawerProps.page} setPage={navDrawerProps.setPage} onClose={onClose}/>*/}
             </DrawerContent>
             </Drawer>
         </div>

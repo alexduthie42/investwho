@@ -1,11 +1,11 @@
 import React from 'react';
-import './../App.css';
-import PageHeader from '../commonComponents/PageHeader';
-import Home from '../pages/Home';
-import Contact from '../pages/Contact';
-import About from '../pages/About';
-import FeeCompare from './FeeCompare';
-import PortfolioCompare from '../pages/PortfolioCompare';
+import './../../App.css';
+import PageHeader from './Components/PageHeader';
+import Home from '../Home/Home';
+// import Contact from '../pages/Contact';
+// import About from '../pages/About';
+import FeeCompare from '../FeeCompare/FeeCompare';
+import PortfolioCompare from '../PortfolioCompare/PortfolioCompare';
 
 
 export default function Main() {
@@ -13,8 +13,7 @@ export default function Main() {
     const [page, setPage] = React.useState('home')
     const pages: { [id: string] : JSX.Element } = {
         "home": <Home page={page} setPage={setPage}/>,
-        "contact": <Contact/>,
-        "about": <About/>,
+        // "about": <About/>,
         "feecompare": <FeeCompare/>,
         "portfoliocompare": <PortfolioCompare/>
     }

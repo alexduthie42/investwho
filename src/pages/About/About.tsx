@@ -1,10 +1,12 @@
 import React from 'react';
 import './../App.css';
-import Questionaire from '../commonComponents/Questionaire';
 import { 
+  Text, 
   Heading, 
   Card, 
+  CardHeader, 
   CardBody, 
+  CardFooter, 
   Stack,
   StackDivider,
   Box,
@@ -12,19 +14,14 @@ import {
   Radio,
   Checkbox,
   Select,
-  Input,
-  Collapse,
-  useDisclosure,
+  Input
 } from '@chakra-ui/react';
 
-export default function PortfolioCompare() {
-
+export default function About() {
 
   return (
     <div>
-
+     
     </div>
   );
 }
-
-

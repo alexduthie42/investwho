@@ -1,7 +1,7 @@
 import React from 'react';
-import './../App.css';
+import './../../../App.css';
 import NavDrawer from './NavDrawer';
-import logo from "./../content/investwho.png"
+import logo from "./../../../content/investwho.png"
 import { Center, Grid, GridItem } from '@chakra-ui/react';
 
 interface PageHeaderProps {
