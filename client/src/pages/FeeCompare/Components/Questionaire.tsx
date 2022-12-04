@@ -1,5 +1,5 @@
 import React from 'react';
-import './../../../App.css';
+import './../../../styles/FeeCompare.scss';
 import { 
     Heading, 
     Card, 
@@ -20,7 +20,7 @@ import {
 
   
 interface QuestionaireProps {
-    onResultOpen: () => void;
+    setSubmitted: (submitted: boolean) => void;
     setFrequency: (frequency: string) => void;
     setInvestmentAmount: (amount: number) => void;
 }
@@ -64,15 +64,15 @@ export default function Questionaire(questionaireProps: QuestionaireProps) {
         {
             questionaireProps.setFrequency(frequency);
             questionaireProps.setInvestmentAmount(investmentAmount);
-            questionaireProps.onResultOpen();
+            questionaireProps.setSubmitted(true);
         }
     }
 
     return (
         <div >
-            <Card variant={'outline'} className='card'>
+            <Card variant={'outline'} className='questionaireCard'>
                 <CardBody>
-                <Stack spacing='8'>
+                <Stack spacing='6'>
 
                     <Collapse in={isInvestmentAmountAlertOpen} animateOpacity>
                         <Alert status='warning'>
@@ -120,7 +120,7 @@ export default function Questionaire(questionaireProps: QuestionaireProps) {
                         </InputGroup>
                     </Box>
 
-                    <Button colorScheme='blue' onClick={() => Calculate()}>Calculate</Button>
+                    <Button colorScheme='brandBlue' onClick={() => Calculate()}>Calculate</Button>
                 </Stack>
                 </CardBody>
             </Card>

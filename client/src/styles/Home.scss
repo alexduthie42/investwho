@@ -1,0 +1,52 @@
+ 
+$desktopWidth: 1400px;
+
+.heading {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: $desktopWidth) {
+    .heading {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 40px;
+        align-items: center;
+        text-align: center;
+    }
+}
+  
+.cardContainer {
+    max-width: $desktopWidth;
+    margin: auto;
+
+    .cardGroup {
+        margin-left: 80px;
+        margin-right: 80px;
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    .card {
+        height: 310px;
+    }  
+
+    @media (max-width: $desktopWidth) {
+        .card {
+            height: auto;
+        }
+        
+        .cardGroup {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+    }
+}
+  
+

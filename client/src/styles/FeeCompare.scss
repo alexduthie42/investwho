@@ -1,0 +1,47 @@
+.feeComparisonResultsCard {
+    margin: 20px;
+
+    .chartTitle {
+        text-align: center;
+    }
+
+    .paragraph {
+        margin-bottom: 20px;
+        .listItem {
+            margin-bottom: 10px;
+        }
+    }
+
+    .cardContainer {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .card {
+        height: 370px;
+    }
+
+    .cardGroup {
+        margin-left: 80px;
+        margin-right: 80px;
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    @media (max-width: 1000px) {
+        .card {
+            height: auto;
+        }
+        
+        .cardGroup {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40px;
+            align-items: center;
+        }
+    }
+}
+
+.questionaireCard {
+    margin: 20px;
+}

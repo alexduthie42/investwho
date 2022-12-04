@@ -1,20 +1,5 @@
 import React from 'react';
-import './../../App.css';
-import { 
-  Heading, 
-  Card, 
-  CardBody, 
-  Stack,
-  StackDivider,
-  Box,
-  RadioGroup,
-  Radio,
-  Checkbox,
-  Select,
-  Input,
-  Collapse,
-  useDisclosure,
-} from '@chakra-ui/react';
+import './../../styles/App.scss';
 
 export default function PortfolioCompare() {
 

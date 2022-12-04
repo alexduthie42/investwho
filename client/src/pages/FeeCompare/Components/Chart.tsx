@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { WindowContext } from './../../../helpers/WindowContext';
 import {
    BarChart, 
    Bar, 
@@ -17,30 +18,13 @@ interface ChartProps {
 export default function Chart(chartProps: ChartProps) {
 
     const horizontalGraphWidth: number = 1000;
-    
-    const [dimensions, setDimensions] = React.useState({ 
-        height: window.innerHeight,
-        width: window.innerWidth
-      })
-      
-      React.useEffect(() => {
-        function handleResize() {
-          setDimensions({
-            height: window.innerHeight,
-            width: window.innerWidth
-          })
-        }
-        window.addEventListener('resize', handleResize);
-        return () => {
-          window.removeEventListener("resize", handleResize);
-        };
-    })
+    const { clientWidth } = useContext(WindowContext);
 
     return (
-        <ResponsiveContainer width="100%" aspect={dimensions.width > horizontalGraphWidth ? 3 : NaN}>
+        <ResponsiveContainer width="100%" aspect={clientWidth > horizontalGraphWidth ? 3 : NaN}>
           <BarChart
             width={500}
-            height={dimensions.width > horizontalGraphWidth ? 300 : 1000}
+            height={clientWidth > horizontalGraphWidth ? 300 : 1000}
             data={chartProps.feeData}
             margin={{
               top: 20,
@@ -48,17 +32,17 @@ export default function Chart(chartProps: ChartProps) {
               left: 20,
               bottom: 5,
             }}
-            layout={dimensions.width > horizontalGraphWidth ? 'vertical' : 'horizontal'}
+            layout={clientWidth > horizontalGraphWidth ? 'vertical' : 'horizontal'}
           >
             <CartesianGrid />
-            <XAxis dataKey={dimensions.width > horizontalGraphWidth ? '' : 'name'} type={dimensions.width > horizontalGraphWidth ? 'number' : 'category'} />
-            <YAxis dataKey={dimensions.width > horizontalGraphWidth ? 'name' : ''}  type={dimensions.width > horizontalGraphWidth ? 'category' : 'number'} />
-            <Tooltip />
+            <XAxis tickFormatter={(value) => clientWidth > horizontalGraphWidth ? `$${value}` : value} dataKey={clientWidth > horizontalGraphWidth ? '' : 'name'} type={clientWidth > horizontalGraphWidth ? 'number' : 'category'} />
+            <YAxis tickFormatter={(value) => clientWidth > horizontalGraphWidth ? value : `$${value}`} dataKey={clientWidth > horizontalGraphWidth ? 'name' : ''}  type={clientWidth > horizontalGraphWidth ? 'category' : 'number'} width={clientWidth > horizontalGraphWidth ? 70 : 40} />
+            <Tooltip formatter={(value) => `$${value}`} />
             <Legend />
-            <Bar dataKey="fxFees" name="Currency Exchange Fees" stackId="a" fill="#8884d8" />
-            <Bar dataKey="brokerageFees" name="Transaciton Fees" stackId="a" fill="#82ca9d" />
-            <Bar dataKey="managementFees" name="Management Fees" stackId="a" fill="#FCF400" />
+            <Bar dataKey="fxFees" name="Currency Exchange Fees" stackId="a" fill="#00B0F6" />
+            <Bar dataKey="brokerageFees" name="Transaction Fees" stackId="a" fill="#00E3B7" />
+            <Bar dataKey="managementFees" name="Management Fees" stackId="a" fill="#F0EE16" />
           </BarChart>
         </ResponsiveContainer>
-      );
+    );
 }

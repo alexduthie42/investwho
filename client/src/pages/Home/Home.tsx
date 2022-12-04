@@ -1,5 +1,8 @@
-import React from 'react';
-import './../../App.css';
+import React, { 
+  useContext 
+} from 'react';
+import './../../styles/Home.scss';
+import { WindowContext } from './../../helpers/WindowContext';
 import { 
   Heading, 
   Card, 
@@ -19,9 +22,12 @@ interface HomeProps {
 
 
 export default function Home(homeProps: HomeProps) {
+
+  const { clientWidth } = useContext(WindowContext);
+
   return (
     <div>
-      <div className='homeHeading'>
+      <div className='heading'>
         <Stack spacing={6}>
           <Heading size='lg'> 
             We know it's hard to choose an investment platform in NZ with so many options
@@ -31,9 +37,9 @@ export default function Home(homeProps: HomeProps) {
           </Heading>
         </Stack>
       </div>
-      <div className='homeCardContainer'>
-        <SimpleGrid spacing={4} columns={2}  className='homeCardGroup'>
-          <Card className='homeCard'>
+      <div className='cardContainer'>
+        <SimpleGrid spacing={4} columns={clientWidth > 1000 ? 2 : 1}  className='cardGroup'>
+          <Card className='card'>
             <CardHeader>
               <Heading size='md'>Fee Comparison Tool</Heading>
             </CardHeader>
@@ -46,7 +52,7 @@ export default function Home(homeProps: HomeProps) {
               <Button onClick={() => homeProps.setPage('feecompare')} colorScheme='blue'>View here</Button>
             </CardFooter>
           </Card>
-          <Card className='homeCard'>
+          <Card className='card'>
             <CardHeader>
               <Heading size='md'>Portfolio Comparison Tool</Heading>
             </CardHeader>

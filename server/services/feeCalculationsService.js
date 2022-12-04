@@ -6,6 +6,11 @@ const calculateFeeData = (frequency, amount) => {
       "yearly": 1
     };
 
+    if (frequency == null || amount == null)
+    {
+      return [];
+    }
+
     return [
       {
         name: 'Sharesies',

@@ -1,6 +1,7 @@
 import React from 'react';
-import './../../App.css';
+import './../../styles/App.scss';
 import PageHeader from './Components/PageHeader';
+import PageFooter from './Components/PageFooter';
 import Home from '../Home/Home';
 // import Contact from '../pages/Contact';
 // import About from '../pages/About';
@@ -20,12 +21,11 @@ export default function Main() {
 
     return (
         <div>
-            <div>
-                <PageHeader page={page} setPage={setPage} />
-            </div>
-            <div className='page'>
+            <PageHeader page={page} setPage={setPage} />
+            <div className='content'>
                 {pages[page]}
             </div>
+            <PageFooter />
         </div>
     );
 }

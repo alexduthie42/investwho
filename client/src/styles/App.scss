@@ -1,0 +1,43 @@
+
+$primaryColor: rgb(50, 141, 233);
+
+.menubutton {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.pageheader {
+    background-color: $primaryColor;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content {
+    min-height: calc(100vh - 250px);
+    max-width: 1300px;
+    margin: auto;
+}
+
+.pageFooter {
+    background-color: $primaryColor;
+    height: 150px;
+}
+
+
+.drawerbutton {
+    display: flex;
+    padding-left: 10px;
+    align-items: center;
+}
+  
+.logo {
+    height: auto;
+    width: 250px;
+}
+
+.logoFooter {
+    height: auto;
+    width: 150px;
+    padding-top: 50px;
+    margin-left: 50px;
+}

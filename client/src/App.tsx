@@ -1,12 +1,15 @@
-import './App.css';
+import './styles/App.scss';
 import Main from './pages/Main/Main';
 import { ChakraProvider  } from '@chakra-ui/react'
-import { theme } from "./theme"
-
+import { theme } from "./styles/theme"
+import { WindowContextProvider } from "./helpers/WindowContext"
+ 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Main/>
+      <WindowContextProvider>
+        <Main/>
+      </WindowContextProvider>
     </ChakraProvider>
   );
 }
