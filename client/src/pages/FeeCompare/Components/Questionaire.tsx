@@ -23,11 +23,12 @@ interface QuestionaireProps {
     onResultOpen: () => void;
     setFrequency: (frequency: string) => void;
     setInvestmentAmount: (amount: number) => void;
-    frequency: String;
-    investmentAmount: Number;
 }
 
 export default function Questionaire(questionaireProps: QuestionaireProps) {
+
+    const [investmentAmount, setInvestmentAmount] = React.useState(0)
+    const [frequency, setFrequency] = React.useState("")
 
     const { isOpen: isInvestmentAmountAlertOpen, onOpen: onInvestmentAmountAlertOpen, onClose: onInvestmentAmountAlertClose } = useDisclosure()
     const { isOpen: isFrequencySelectedAlertOpen, onOpen: onFrequencySelectedAlertOpen, onClose: onFrequencySelectedAlertClose } = useDisclosure()
@@ -35,7 +36,7 @@ export default function Questionaire(questionaireProps: QuestionaireProps) {
     const onInvestmentAmountChange = (value: any) => {
         if (Number(value))
         {
-            questionaireProps.setInvestmentAmount(Number(value));
+            setInvestmentAmount(Number(value));
             onInvestmentAmountAlertClose();
         }
         else
@@ -45,22 +46,24 @@ export default function Questionaire(questionaireProps: QuestionaireProps) {
     }
 
     const onFrequencyChange = (value: any) => {
-        questionaireProps.setFrequency(value);
+        setFrequency(value);
         onFrequencySelectedAlertClose();
     }
 
     const Calculate = () =>
     {
-        if (questionaireProps.frequency === "")
+        if (frequency === "")
         {
             onFrequencySelectedAlertOpen();
         }
-        else if (questionaireProps.investmentAmount <= 0)
+        else if (investmentAmount <= 0)
         {
             onInvestmentAmountAlertOpen();
         }
         else
         {
+            questionaireProps.setFrequency(frequency);
+            questionaireProps.setInvestmentAmount(investmentAmount);
             questionaireProps.onResultOpen();
         }
     }
