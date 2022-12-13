@@ -23,6 +23,7 @@ export default function FeeCompare() {
 
   const [feeData, setFeeData] = useState([{}]);
   const [investmentAmount, setInvestmentAmount] = React.useState(0)
+  const [initialInvestmentAmount, setInitialInvestmentAmount] = React.useState(0)
   const [frequency, setFrequency] = React.useState("")
   const [isSubmitted, setSubmitted] = React.useState(false)
 
@@ -44,6 +45,7 @@ export default function FeeCompare() {
         setSubmitted={setSubmitted} 
         setFrequency={setFrequency} 
         setInvestmentAmount={setInvestmentAmount} 
+        setInitialInvestmentAmount={setInitialInvestmentAmount} 
       />
 
       <Collapse in={isSubmitted === true && feeData.length !== 0} animateOpacity>
